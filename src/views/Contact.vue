@@ -2,11 +2,11 @@
     <BorderDiv
     :title="title"
     :quote="quote">
-      <div id="contact-container" class="info--text pa-4">
-        <p class="body-1">If you are looking to add a new developer to your team I would love to hear from you! Please view my resume and GitHub on the right, and let's set up an interview!</p>
+      <div id="contact-container" class="pa-4">
+        <p>If you are looking to add a new developer to your team I would love to hear from you! Please view my resume and GitHub on the right, and let's set up an interview!</p>
       </div>
       <div id="professional-links">
-        <v-btn color="accent"
+        <v-btn
         fab
         href="mailto:Cj.haviland@yahoo.com" target="_blank">
           <v-icon color="info" title="cj.haviland@yahoo.com">fas fa-at</v-icon>
@@ -42,11 +42,9 @@ export default {
       title: "Contact Me",
       quote: "But enough about me, let's talk!"
     };
-  },
-  computed: {
-    pageStyles() {
-      return this.$store.getters.getPageStyles(this.$route.name);
-    }
   }
 };
 </script>
+
+<style scoped>
+</style>

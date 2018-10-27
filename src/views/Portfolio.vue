@@ -38,9 +38,6 @@ export default {
     };
   },
   computed: {
-    pageStyles() {
-      return this.$store.getters.getPageStyles(this.$route.name);
-    },
     portfolioExamples() {
       return this.$store.getters.getPortfolioExamples;
     }

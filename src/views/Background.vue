@@ -2,26 +2,29 @@
     <BorderDiv
       :title="title"
       :quote="quote">
-      <BackgroundList />
+      <BackgroundList id="background-list-container"/>
     </BorderDiv>
 </template>
 
 
 <script>
-  import BorderDiv from "@/components/BorderDiv.vue"
-  import BackgroundList from "@/components/BackgroundList.vue"
+import BorderDiv from "@/components/BorderDiv.vue";
+import BackgroundList from "@/components/BackgroundList.vue";
 
-  export default {
-    name: "background",
-    components: {
-      BorderDiv,
-      BackgroundList
-    },
-    data () {
-      return {
-        title: 'Background',
-        quote: `Hi, I'm CJ Haviland`
-      }
-    }
-  };
+export default {
+  name: "background",
+  components: {
+    BorderDiv,
+    BackgroundList
+  },
+  data() {
+    return {
+      title: "Background",
+      quote: `Hi, I'm CJ Haviland`
+    };
+  }
+};
 </script>
+
+<style scoped>
+</style>

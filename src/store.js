@@ -43,8 +43,8 @@ export default new Vuex.Store({
         warning: "#FFC107"
       },
       contact: {
-        primary: "#031927", // Maastricht Blue
-        secondary: "#424242",
+        primary: "#757780", // Maastricht Blue
+        secondary: "rgba(29, 20, 20, 0.83)",
         accent: "#C4DFEF",
         error: "#FF5252",
         info: "#465660",

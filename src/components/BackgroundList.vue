@@ -1,6 +1,6 @@
 <template>
-  <div class="info--text pa-4">
-    <dl class="d-flex body-1"
+  <div class="pa-4">
+    <dl class="d-flex"
       v-for="item in backgroundList"
       :key="item.title"
       :descList="item.title" >
@@ -21,7 +21,10 @@ export default {
         { title: "Current Position", content: "Software Engineer" },
         { title: "Bachelors", content: "Information Systems" },
         { title: "Coursework", content: "Computer Science, Web Development" },
-        { title: "Certifications", content: "MCP, MTA Development Fundamentals, C# Essential Training" }
+        {
+          title: "Certifications",
+          content: "MCP, MTA Development Fundamentals, C# Essential Training"
+        }
       ]
     };
   }
@@ -29,18 +32,14 @@ export default {
 </script>
 
 <style scoped>
-dl { 
-  font-size: .5em;
+dd {
+  width: 50%;
+  padding-right: 1vw;
 }
-  dd {
-    width: 50%;
-    padding-right: 1vw;
-  }
 
-  dt {
-    width: 50%;
-    padding-left: 1vw;
-    font-weight: bold;
-  }
+dt {
+  width: 50%;
+  padding-left: 1vw;
+  font-weight: bold;
+}
 </style>
-

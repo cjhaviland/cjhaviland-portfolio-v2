@@ -31,8 +31,4 @@
 </script>
 
 <style scoped>
-  nav {
-    text-align: center;
-    height: 100%;
-  }
 </style>

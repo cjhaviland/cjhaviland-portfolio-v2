@@ -1,6 +1,6 @@
 <template>
     <v-app id="app">
-      <div class="main-container primary">
+      <div class="main-container" :style="mainBackground">
         <section id="nav-container">
           <Nav />
         </section>
@@ -21,39 +21,38 @@ export default {
   components: {
     Nav
   },
+  data() {
+    return {
+      mainBackground: { backgroundColor: "var(--about-background)" }
+    };
+  },
   watch: {
-    $route(to, from) { // Watcher on route to change the current views theme
-      let pageStyles = this.$store.getters.getPageStyles(to.name);
-      this.$vuetify.theme.primary = pageStyles.primary;
-      this.$vuetify.theme.secondary = pageStyles.secondary;
-      this.$vuetify.theme.accent = pageStyles.accent;
-      this.$vuetify.theme.error = pageStyles.error;
-      this.$vuetify.theme.info = pageStyles.info;
-      this.$vuetify.theme.success = pageStyles.success;
-      this.$vuetify.theme.warning = pageStyles.warning;
+    $route(to, from) {
+      // Watcher on route to change the current views theme
+      this.mainBackground.backgroundColor = `var(--${to.name}-background)`;
     }
   }
 };
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Raleway:400, 900');
-  
-  html {
-    font-size: 2.5vw;
-  }
-  
-  main {
-    height: 85vh;
-    margin-top: 1%;
-    padding: 2%;
-  }
-  
-  #nav-container {
-    height: 15vh;
-  }
+@import url("https://fonts.googleapis.com/css?family=Raleway:400, 900");
 
-  #app {
-    font-family: 'Raleway', sans-serif;
-  }
+html {
+  font-size: calc(100% + 0.5vw);
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 15vh auto;
+}
+
 </style>
