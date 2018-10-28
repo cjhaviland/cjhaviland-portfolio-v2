@@ -1,33 +1,44 @@
 html {
   --link-text: rgba(29, 20, 20, 0.83);
 
-  --about-background: #4caf50;
-  --about-title: #86d889;
-  --about-quote: #acc4ad;
-  --about-text: #243324;
+  --portfolio-background: #ecebe4;
+  --portfolio-title: #a3a08f;
+  --portfolio-quote: #465660;
+  --portfolio-text: #465660;
 
   --background-background: #daa520;
   --background-title: #ffedc1;
-  --background-quote: #8c7d58;
-  --background-text: #ffffff;
+  --background-quote: #465660;
+  --background-text: #465660;
 
-  --skills-background: #ecebe4;
-  --skills-title: #a3a08f;
-  --skills-quote: #474539;
-  --skills-text: #000000;
+  --skills-background: #b4c8ff;
+  --skills-title: #9fa8c4;
+  --skills-quote: #465660;
+  --skills-text: #465660;
 
-  --portfolio-background: #b4c8ff;
-  --portfolio-title: #9fa8c4;
-  --portfolio-quote: #62656d;
-  --portfolio-text: #3f4554;
+  --about-background: #757780;
+  --about-title: var(--link-text);
+  --about-quote: #465660;
+  --about-text: #465660;
 
-  --contact-background: #757780;
-  --contact-title: var(--link-text);
-  --contact-quote: #c4dfef;
+  --contact-background: #4caf50;
+  --contact-title: #86d889;
+  --contact-quote: #465660;
   --contact-text: #465660;
+
+  height: 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  height: 100%;
+  line-height: 1.1;
 }
 
 nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   font-family: "Raleway", sans-serif;
   font-size: 2vw;
   font-weight: 900;
@@ -41,17 +52,33 @@ nav a {
   color: var(--link-text);
 }
 
-h1 {
-  font-size: calc(250% + 5vw);
-  line-height: 1em;
+main {
+  display: grid;
+  grid-template-rows: repeat(2, max-content) auto;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5% 0;
+  width: 80%;
 }
 
-h2 {
-  font-size: calc(150% + 1vw);
-  font-style: italic;
+h1 {
+  font-family: Raleway;
+  font-size: calc(250% + 5vw);
+  line-height: 1em;
   text-align: center;
 }
 
-p {
-  font-family: "Raleway", sans-serif;
+h2 {
+  font-family: Oswald;
+  font-size: calc(100% + 1vw);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 5px 0px 15px 0px;
+}
+
+h3 {
+  font-size: 1em;
+  line-height: 1.1em;
+  text-align: center;
 }

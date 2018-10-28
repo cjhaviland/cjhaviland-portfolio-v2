@@ -1,5 +1,5 @@
 <template>
-    <BorderDiv
+    <MainContainer
     :title="title"
     :quote="quote">
       <div id="contact-container" class="pa-4">
@@ -27,20 +27,20 @@
           <v-icon color="info" title="View My Resume">far fa-address-card</v-icon>
         </v-btn>
       </div>
-    </BorderDiv>
+    </MainContainer>
 </template>
 
 <script>
-import BorderDiv from "@/components/BorderDiv.vue";
+import MainContainer from "@/components/MainContainer.vue";
 
 export default {
   components: {
-    BorderDiv
+    MainContainer
   },
   data() {
     return {
-      title: "Contact Me",
-      quote: "But enough about me, let's talk!"
+      title: "Contact",
+      quote: "Enough about me, let's talk about you!"
     };
   }
 };

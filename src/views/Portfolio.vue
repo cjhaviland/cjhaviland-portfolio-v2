@@ -1,5 +1,5 @@
 <template>
-    <BorderDiv
+    <MainContainer
     :title="title"
     :quote="quote">
       <ExampleContainer>
@@ -13,18 +13,18 @@
       <!-- use the modal component, pass in the prop -->
       <Modal :show="showModal" :example="passedExample" @close="showModal=false">
       </Modal>
-    </BorderDiv>
+    </MainContainer>
 </template>
 
 <script>
-import BorderDiv from "@/components/BorderDiv.vue";
+import MainContainer from "@/components/MainContainer.vue";
 import ExampleContainer from "@/components/ExampleContainer.vue";
 import ExampleItem from "@/components/ExampleItem.vue";
 import Modal from "@/components/Modal.vue";
 
 export default {
   components: {
-    BorderDiv,
+    MainContainer,
     ExampleContainer,
     ExampleItem,
     Modal
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       title: "Portfolio",
-      quote: "I made this.",
+      quote: "Hello, I'm CJ Haviland.",
       showModal: false,
       passedExample: {}
     };

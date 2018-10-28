@@ -1,6 +1,6 @@
 <template>
   <div class="example-item" @click="$emit('open')">
-    <h2 name="label">{{title}}</h2>
+    <h3 name="label">{{title}}</h3>
   </div>
 </template>
 
@@ -26,11 +26,5 @@ export default {
 
 .example-item:hover {
   opacity: 0.5;
-}
-
-.example-item h2 {
-  font-size: 1em;
-  line-height: 1.1em;
-  text-align: center;
 }
 </style>

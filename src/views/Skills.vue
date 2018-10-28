@@ -1,5 +1,5 @@
 <template>
-    <BorderDiv
+    <MainContainer
     :title="title"
     :quote="quote">
     <section id="skill-container" class="body-container">
@@ -20,20 +20,20 @@
           :value=skill.level class="slider" id="{skill.name}" disabled>
       </div>
     </section>
-    </BorderDiv>
+    </MainContainer>
 </template>
 
 <script>
-import BorderDiv from "@/components/BorderDiv.vue";
+import MainContainer from "@/components/MainContainer.vue";
 
 export default {
   components: {
-    BorderDiv
+    MainContainer
   },
   data() {
     return {
       title: "Skills",
-      quote: "Will said skills pay the bills?",
+      quote: "Will the skills pay the bills?",
       skills: [
         { name: "HTML5, CSS3", level: 3 },
         { name: "JavaScript", level: 3 },

@@ -1,14 +1,8 @@
 <template>
-    <v-app id="app">
-      <div class="main-container" :style="mainBackground">
-        <section id="nav-container">
+      <div id="container" :style="mainBackground">
           <Nav />
-        </section>
-        <main>
-            <router-view />
-        </main>
+          <router-view />
       </div>
-    </v-app>
 </template>
 
 
@@ -36,23 +30,11 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Raleway:400, 900");
+@import url("https://fonts.googleapis.com/css?family=Lato|Oswald|Raleway");
 
-html {
-  font-size: calc(100% + 0.5vw);
-}
-
-main {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-container {
+#container {
   height: 100%;
   display: grid;
   grid-template-rows: 15vh auto;
 }
-
 </style>

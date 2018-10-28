@@ -1,5 +1,5 @@
 <template>
-    <nav class="d-flex">
+    <nav>
       <NavItem
         v-for="route in routes" 
         :key="route.name"
@@ -9,25 +9,25 @@
 </template>
 
 <script>
-  import NavItem from "@/components/NavItem.vue";
+import NavItem from "@/components/NavItem.vue";
 
-  export default {
-    name: "Nav",
-    components: {
-      NavItem
-    },
-    data() {
-      return {
-        routes: [
-          { name: "about",  title: "About Me", route: "/"},
-          { name: "background", title: "Background", route: "background"},
-          { name: "skills",  title: "Skills", route: "skills"},
-          { name: "portfolio",  title: "Portfolio", route: "portfolio"},
-          { name: "contact",  title: "Contact Me", route: "contact"}
-        ]
-      };
-    }
-  };
+export default {
+  name: "Nav",
+  components: {
+    NavItem
+  },
+  data() {
+    return {
+      routes: [
+        { name: "portfolio", title: "Portfolio", route: "portfolio" },
+        { name: "background", title: "Background", route: "background" },
+        { name: "skills", title: "Skills", route: "skills" },
+        { name: "about", title: "About", route: "/" },
+        { name: "contact", title: "Contact", route: "contact" }
+      ]
+    };
+  }
+};
 </script>
 
 <style scoped>
