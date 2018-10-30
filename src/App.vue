@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      mainBackground: { backgroundColor: "var(--about-background)" }
+      mainBackground: { backgroundColor: "" }
     };
   },
   watch: {

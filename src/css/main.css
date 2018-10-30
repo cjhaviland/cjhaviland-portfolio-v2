@@ -1,37 +1,28 @@
 html {
-  --link-text: rgba(29, 20, 20, 0.83);
+  --link-text: #1d1414;
+  --primary-text: #465660;
 
   --portfolio-background: #ecebe4;
   --portfolio-title: #a3a08f;
-  --portfolio-quote: #465660;
-  --portfolio-text: #465660;
 
   --background-background: #daa520;
   --background-title: #ffedc1;
-  --background-quote: #465660;
-  --background-text: #465660;
 
-  --skills-background: #b4c8ff;
-  --skills-title: #9fa8c4;
-  --skills-quote: #465660;
-  --skills-text: #465660;
+  --skills-background: #30c5ff;
+  --skills-title: #5e6c9f;
 
-  --about-background: #757780;
+  --about-background: #acedff;
   --about-title: var(--link-text);
-  --about-quote: #465660;
-  --about-text: #465660;
 
   --contact-background: #4caf50;
   --contact-title: #86d889;
-  --contact-quote: #465660;
-  --contact-text: #465660;
 
   height: 100%;
 }
 
 body {
   font-family: "Lato", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   height: 100%;
   line-height: 1.1;
 }
@@ -53,6 +44,7 @@ nav a {
 }
 
 main {
+  color: var(--primary-text);
   display: grid;
   grid-template-rows: repeat(2, max-content) auto;
   margin: 0 auto;
@@ -78,7 +70,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1em;
+  font-size: calc(100% + 0.3vw);
   line-height: 1.1em;
   text-align: center;
 }

@@ -16,8 +16,9 @@ section.example-container {
   margin-top: 3%;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 3em;
-  justify-items: center;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: repeat(2, max-content);
+  grid-gap: 1em;
+  justify-content: space-evenly;
 }
 </style>
