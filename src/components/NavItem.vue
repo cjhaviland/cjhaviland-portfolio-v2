@@ -22,7 +22,6 @@ export default {
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  width: 100%;
   min-width: 20%;
 }
 
