@@ -1,19 +1,27 @@
 <template>
-    <MainContainer
+  <MainContainer
     :title="title"
     :quote="quote">
-    <section id="skill-container" class="body-container">
-      <SkillTrack v-for="track in skillTracks" :key="track.track" :trackHeader="track.track"> 
-        <Skill v-for="skill in track.skills" :key="skill.id" :skillName="skill"/>
+    <section
+      id="skill-container"
+      class="body-container">
+      <SkillTrack
+        v-for="track in skillTracks"
+        :key="track.track"
+        :track-header="track.track">
+        <Skill
+          v-for="skill in track.skills"
+          :key="skill.id"
+          :skill-name="skill"/>
       </SkillTrack>
     </section>
-    </MainContainer>
+  </MainContainer>
 </template>
 
 <script>
-import MainContainer from "@/components/MainContainer.vue";
-import SkillTrack from "@/components/SkillTrack.vue";
-import Skill from "@/components/Skill.vue";
+import MainContainer from '@/components/MainContainer.vue';
+import SkillTrack from '@/components/SkillTrack.vue';
+import Skill from '@/components/Skill.vue';
 
 export default {
   components: {
@@ -23,24 +31,24 @@ export default {
   },
   data() {
     return {
-      title: "Skills",
-      quote: "Will the skills pay the bills?",
+      title: 'Skills',
+      quote: 'Will the skills pay the bills?',
       skillTracks: [
         {
-          track: "To Do",
-          skills: ["Python"]
+          track: 'To Do',
+          skills: ['Python']
         },
         {
-          track: "In Progress",
-          skills: ["Node", "Vue", "React"]
+          track: 'In Progress',
+          skills: ['Node', 'Vue', 'React']
         },
         {
-          track: "Everyday Use",
-          skills: ["C#.NET", "JavaScript", "SQL"]
+          track: 'Everyday Use',
+          skills: ['C#.NET', 'JavaScript', 'SQL']
         },
         {
-          track: "Refine",
-          skills: ["HTML5", "CSS3", "Knitting"]
+          track: 'Refine',
+          skills: ['HTML5', 'CSS3', 'Knitting']
         }
       ]
     };

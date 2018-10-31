@@ -1,27 +1,29 @@
 <template>
-      <div id="container" :style="mainBackground">
-          <Nav />
-          <router-view />
-      </div>
+  <div
+    id="container"
+    :style="mainBackground">
+    <Nav />
+    <router-view />
+  </div>
 </template>
 
 
 <script>
 // @ is an alias to /src
-import Nav from "@/components/Nav.vue";
+import Nav from '@/components/Nav.vue';
 
 export default {
-  name: "app",
+  name: 'App',
   components: {
     Nav
   },
   data() {
     return {
-      mainBackground: { backgroundColor: "" }
+      mainBackground: { backgroundColor: '' }
     };
   },
   watch: {
-    $route(to, from) {
+    $route(to) {
       // Watcher on route to change the current views theme
       this.mainBackground.backgroundColor = `var(--${to.name}-background)`;
     }

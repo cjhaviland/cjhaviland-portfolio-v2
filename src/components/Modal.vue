@@ -1,23 +1,41 @@
 <!-- template for the modal component -->
 <template>
   <transition name="modal">
-    <div class="modal-mask" @click="close" v-show="show">
+    <div
+      v-show="show"
+      class="modal-mask"
+      @click="close">
       <div class="modal-wrapper">
-        <div class="modal-container" @click.stop>
+        <div
+          class="modal-container"
+          @click.stop>
           <div class="modal-header">
-            <h3>{{example.title}}</h3>
+            <h3>{{ example.title }}</h3>
             <div class="modal-header-pills">
-              <span class="pill" v-for="pill in example.pills" :key="pill">{{pill}}</span>
+              <span
+                v-for="pill in example.pills"
+                :key="pill"
+                class="pill">{{ pill }}</span>
             </div>
           </div>
           <div class="modal-body">
-          <div id="tab-container">
-            <a v-for="(tab, key) in tabs" :key="key" :id="`${key}-tab`" href="#" @click="setActive(key)">{{tab}}</a>
-          </div>
-          <template v-for="(content, key) in example.contents">
-            <div :key="key" v-if="active === key && key === 'result'" v-html="content"></div>
-            <div :key="key" v-else-if="active === key">{{content}}</div>
-          </template> 
+            <div id="tab-container">
+              <a
+                v-for="(tab, key) in tabs"
+                :key="key"
+                :id="`${key}-tab`"
+                href="#"
+                @click="setActive(key)">{{ tab }}</a>
+            </div>
+            <template v-for="(content, key) in example.contents">
+              <div
+                v-if="active === key && key === 'result'"
+                :key="key"
+                v-html="content"/>
+              <div
+                v-else-if="active === key"
+                :key="key">{{ content }}</div>
+            </template>
           </div>
           <div class="modal-footer">
             <button @click="close">Close</button>
@@ -30,47 +48,64 @@
 
 <script>
 export default {
-  name: "Modal",
+  name: 'Modal',
   props: {
-    show: false,
-    example: {}
+    show: {
+      type: Boolean,
+      default: false
+    },
+    example: {
+      type: Object,
+      default() {
+        return {
+          title: 'Title',
+          contents: {
+            objective:
+            'Objective Text',
+            process:
+            'Process Text'
+          },
+          pills: ['Pill']
+        };
+      }
+    }
   },
   data() {
     return {
-      active: "objective",
+      active: 'objective',
       tabs: {
-        objective: "Objective",
-        process: "Process",
-        result: "Result"
+        objective: 'Objective',
+        process: 'Process',
+        result: 'Result'
       }
     };
   },
-  methods: {
-    close: function() {
-      // Hide the modal on close using parents event
-      this.$emit("close");
-
-      // Reset the modal, delay it a bit for the close transition
-      this.setActive("objective");
-    },
-    setActive: function(key) {
-      this.active = key;
-      document.getElementsByClassName("active")[0].classList.remove("active");
-      document.getElementById(`${key}-tab`).classList.add("active");
-    },
-    initActive: function() {
-      let activeTab = document.getElementById(`${this.active}-tab`);
-      activeTab.classList.add("active");
-    }
-  },
-  mounted: function() {
-    document.addEventListener("keydown", e => {
+  mounted() {
+    document.addEventListener('keydown', (e) => {
       if (this.show && e.keyCode === 27) {
         this.close();
       }
     });
 
     this.initActive();
+  },
+  methods: {
+    close() {
+      // Hide the modal on close using parents event
+      this.$emit('close');
+
+      // Reset the modal, delay it a bit for the close transition
+      this.setActive('objective');
+    },
+    setActive(key) {
+      this.active = key;
+      document.getElementsByClassName('active')[0].classList.remove('active');
+      document.getElementById(`${key}-tab`).classList.add('active');
+    },
+    initActive() {
+      const activeTab = document.getElementById(`${this.active}-tab`);
+      activeTab.classList.add('active');
+    }
   }
 };
 </script>

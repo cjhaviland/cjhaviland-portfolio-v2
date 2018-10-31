@@ -1,14 +1,19 @@
 <template>
-  <div class="example-item" @click="$emit('open')">
-    <h3 name="label">{{title}}</h3>
+  <div
+    class="example-item"
+    @click="$emit('open')">
+    <h3 name="label">{{ title }}</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ExampleItem",
+  name: 'ExampleItem',
   props: {
-    title: {}
+    title: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>

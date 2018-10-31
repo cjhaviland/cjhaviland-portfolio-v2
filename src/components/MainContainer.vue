@@ -1,22 +1,33 @@
 <template>
   <main id="main-container">
-    <h1 id="page-title" :style="titleColor">{{this.$props.title}}</h1>
-    <h2 id="page-quote"> {{this.$props.quote}}</h2>
+    <h1
+      id="page-title"
+      :style="titleColor">{{ this.$props.title }}</h1>
+    <h2 id="page-quote"> {{ this.$props.quote }}</h2>
     <div id="page-content">
-      <slot></slot>
+      <slot/>
     </div>
   </main>
 </template>
 
 <script>
 export default {
-  name: "MainContainer",
-  props: ["quote", "title"],
+  name: 'MainContainer',
+  props: {
+    quote: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {};
   },
   computed: {
-    titleColor: function() {
+    titleColor() {
       return {
         color: `var(--${this.$route.name}-title)`
       };
