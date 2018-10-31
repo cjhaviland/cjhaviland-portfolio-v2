@@ -37,24 +37,28 @@ export default {
   },
   data() {
     return {
-      active: 'objective',
+      active: "objective",
       tabs: {
-        objective: "Objective", 
-        process: "Process", 
+        objective: "Objective",
+        process: "Process",
         result: "Result"
       }
     };
   },
   methods: {
     close: function() {
+      // Hide the modal on close using parents event
       this.$emit("close");
+
+      // Reset the modal, delay it a bit for the close transition
+      this.setActive("objective");
     },
-    setActive: function(key){
+    setActive: function(key) {
       this.active = key;
-      document.getElementsByClassName('active')[0].classList.remove('active');
-      document.getElementById(`${key}-tab`).classList.add('active');
+      document.getElementsByClassName("active")[0].classList.remove("active");
+      document.getElementById(`${key}-tab`).classList.add("active");
     },
-    initActive: function(){
+    initActive: function() {
       let activeTab = document.getElementById(`${this.active}-tab`);
       activeTab.classList.add("active");
     }

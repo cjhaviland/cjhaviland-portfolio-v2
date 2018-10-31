@@ -28,22 +28,14 @@ export default {
 <style scoped>
 #page-content {
   display: grid;
+  justify-self: center;
   justify-items: center;
   outline-offset: 10px;
-  overflow: auto;
+  width: 80%;
 }
 
-#page-content::-webkit-scrollbar {
+#page-quote {
   color: var(--primary-text);
-  width: 0.2em;
-}
-
-#page-content::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-#page-content::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #page-quote {

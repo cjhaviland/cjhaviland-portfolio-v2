@@ -25,7 +25,7 @@ export default {
 }
 
 .example-item h3 {
-  font-size: calc(100% + 0.1vw);
+  font-size: 1em;
 }
 
 .example-item:hover {
