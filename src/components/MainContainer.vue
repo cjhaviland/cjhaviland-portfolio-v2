@@ -37,4 +37,8 @@ export default {
 #page-quote {
   color: var(--primary-text);
 }
+
+#page-quote {
+  color: var(--primary-text);
+}
 </style>
