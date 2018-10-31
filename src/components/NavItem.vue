@@ -1,18 +1,23 @@
 <template>
   <router-link
-    class="nav-item"
     :to="route.route"
-    :style="{backgroundColor: `var(--${route.name}-background)`}">
-      <span class="route-title">
-        {{ route.title }}
-      </span>
+    :style="{backgroundColor: `var(--${route.name}-background)`}"
+    class="nav-item">
+    <span class="route-title">
+      {{ route.title }}
+    </span>
   </router-link>
 </template>
 
 <script>
 export default {
-  name: "NavItem",
-  props: ["route"]
+  name: 'NavItem',
+  props: {
+    route: {
+      type: Object,
+      default() { return { name: '', title: '', route: '' }; }
+    }
+  }
 };
 </script>
 

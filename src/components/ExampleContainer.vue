@@ -6,8 +6,13 @@
 
 <script>
 export default {
-  name: "ExampleContainer",
-  props: ["groupTitle"]
+  name: 'ExampleContainer',
+  props: {
+    groupTitle: {
+      type: String,
+      default: ''
+    }
+  }
 };
 </script>
 

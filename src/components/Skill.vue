@@ -1,16 +1,23 @@
 <template>
   <div class="skill">
-      <font-awesome-icon  :icon="thumbtack" transform="up-8 rotate-45"/>
-      <h4>{{skillName}}</h4>
+    <font-awesome-icon
+      :icon="thumbtack"
+      transform="up-8 rotate-45"/>
+    <h4>{{ skillName }}</h4>
   </div>
 </template>
 
 <script>
-import { faThumbtack } from "@fortawesome/free-solid-svg-icons";
+import { faThumbtack } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  name: "Skill",
-  props: ["skillName"],
+  name: 'Skill',
+  props: {
+    skillName: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       thumbtack: faThumbtack
