@@ -2,36 +2,27 @@
     <MainContainer
     :title="title"
     :quote="quote">
-      <div id="contact-container" class="pa-4">
-        <p>If you are looking to add a new developer to your team I would love to hear from you! Please view my resume and GitHub on the right, and let's set up an interview!</p>
+      <div id="contact-container">
+      <div>
+        <p>If you are looking to add a new developer to your team I would love to hear from you!</p>
+        <p> Please view my resume and GitHub on the right, and let's set up an interview!</p>
       </div>
-      <div id="professional-links">
-        <v-btn
-        fab
-        href="mailto:Cj.haviland@yahoo.com" target="_blank">
-          <v-icon color="info" title="cj.haviland@yahoo.com">fas fa-at</v-icon>
-        </v-btn>
-        <v-btn color="accent" 
-        fab
-        href="https://github.com/cjhaviland" target="_blank">
-          <v-icon color="info" title="GitHub">fab fa-github</v-icon>
-        </v-btn>
-        <v-btn color="accent"
-        fab
-        href="" target="_blank">
-          <v-icon color="info" title="LinkedIn">fab fa-linkedin-in</v-icon>
-        </v-btn>
-        <v-btn color="accent"
-        fab
-        href="https://drive.google.com/file/d/1NFMI2DlCGHxuYn3r7vAtaUAgkTOgjhL8/view" target="_blank">
-          <v-icon color="info" title="View My Resume">far fa-address-card</v-icon>
-        </v-btn>
+        <div id="professional-links">
+          <a 
+            v-for="button in buttons" 
+            :key="button.title"
+            :href="button.link" target="_blank">
+            <font-awesome-icon  :icon="button.icon" />
+          </a>
+        </div>
       </div>
     </MainContainer>
 </template>
 
 <script>
 import MainContainer from "@/components/MainContainer.vue";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faAt, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 
 export default {
   components: {
@@ -40,11 +31,68 @@ export default {
   data() {
     return {
       title: "Contact",
-      quote: "Enough about me, let's talk about you!"
+      quote: "Enough about me, let's talk about you!",
+      buttons: [
+        {
+          link: "mailto:Cj.haviland@yahoo.com",
+          title: "E-Mail",
+          icon: faAt
+        },
+        {
+          link: "https://github.com/cjhaviland",
+          title: "GitHub",
+          icon: faGithub
+        },
+        {
+          link: "https://www.linkedin.com/in/cj-haviland/",
+          title: "LinkedIn",
+          icon: faLinkedinIn
+        },
+        {
+          link:
+            "https://drive.google.com/file/d/1NFMI2DlCGHxuYn3r7vAtaUAgkTOgjhL8/view",
+          title: "View My Resume",
+          icon: faAddressCard
+        }
+      ]
     };
   }
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$background: #86d889;
+$text: #465660;
+
+#contact-container {
+  display: grid;
+  grid-template-rows: max-content auto;
+  text-align: center;
+}
+
+#professional-links {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  grid-template-rows: max-content;
+  justify-content: space-evenly;
+}
+
+a {
+  background-color: $background;
+  border-radius: 100%;
+  color: $text;
+  padding: 20px;
+
+  svg:hover{
+    transform: scale(1.5);
+  }
+
+  &:visited {
+    color: $text;
+  }
+
+  &:active {
+    color: $text;
+  }
+}
 </style>

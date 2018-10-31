@@ -28,4 +28,7 @@ export default {
 </script>
 
 <style scoped>
+#about-me-container {
+  line-height: 1.4em;
+}
 </style>

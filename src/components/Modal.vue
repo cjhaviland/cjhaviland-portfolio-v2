@@ -11,16 +11,15 @@
             </div>
           </div>
           <div class="modal-body">
-            <v-tabs v-model="active" centered>
-              <v-tab v-for="name in tabs" :key="name">{{name}}</v-tab>
-              <v-tab-item v-for="(item, key) in example.contents" :key="key">
-                <div v-if="key === 'result'" v-html="item"></div>
-                <div v-else>{{item}}</div>
-              </v-tab-item>
-            </v-tabs>
+          <div id="tab-container">
+            <a v-for="(tab, key) in tabs" :key="key" :id="`${key}-tab`" href="#" @click="setActive(key)">{{tab}}</a>
+          </div>
+          <template v-for="(content, key) in example.contents">
+            <div :key="key" v-if="active === key && key === 'result'" v-html="content"></div>
+            <div :key="key" v-else-if="active === key">{{content}}</div>
+          </template> 
           </div>
           <div class="modal-footer">
-            <button @click="next">Next</button>
             <button @click="close">Close</button>
           </div>
         </div>
@@ -38,17 +37,30 @@ export default {
   },
   data() {
     return {
-      active: null,
-      tabs: ["Objective", "Process", "Result"]
+      active: "objective",
+      tabs: {
+        objective: "Objective",
+        process: "Process",
+        result: "Result"
+      }
     };
   },
   methods: {
     close: function() {
+      // Hide the modal on close using parents event
       this.$emit("close");
+
+      // Reset the modal, delay it a bit for the close transition
+      this.setActive("objective");
     },
-    next() {
-      const active = parseInt(this.active);
-      this.active = active < 2 ? active + 1 : 0;
+    setActive: function(key) {
+      this.active = key;
+      document.getElementsByClassName("active")[0].classList.remove("active");
+      document.getElementById(`${key}-tab`).classList.add("active");
+    },
+    initActive: function() {
+      let activeTab = document.getElementById(`${this.active}-tab`);
+      activeTab.classList.add("active");
     }
   },
   mounted: function() {
@@ -57,6 +69,8 @@ export default {
         this.close();
       }
     });
+
+    this.initActive();
   }
 };
 </script>
@@ -81,11 +95,13 @@ export default {
 }
 
 .modal-container {
+  display: grid;
+  grid-template-rows: max-content auto max-content;
   min-height: 50vh;
   width: 75vw;
   margin: 0px auto;
   padding: 20px 30px;
-  background-color: #fff;
+  background-color: var(--portfolio-background);
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
@@ -113,14 +129,27 @@ export default {
   opacity: 0.5;
 }
 
-.v-tabs__items {
-  margin-top: 5%;
+#tab-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(90px, 15%));
+  padding: 20px 0px;
+  text-align: center;
+  justify-content: center;
+}
+
+#tab-container a {
+  text-decoration: none;
+  color: var(--link-text);
+}
+
+#tab-container a.active {
+  width: 90%;
+  border-bottom: 1px solid var(--link-text);
 }
 
 .modal-footer {
   margin-top: 5%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
 }
 

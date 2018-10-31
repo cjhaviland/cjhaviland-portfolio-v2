@@ -15,13 +15,17 @@ export default {
 
 <style scoped>
 .example-item {
-  height: 15vw;
-  width: 20vw;
-  background-color: black;
-  color: white;
+  background-color: var(--portfolio-title);
+  color: var(--link-text);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 12vw;
+  width: 15vw;
+}
+
+.example-item h3 {
+  font-size: 1em;
 }
 
 .example-item:hover {

@@ -5,53 +5,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    styles: {
-      background: {
-        primary: "#DAA520", // Goldenrod
-        secondary: "#FFEDC1",
-        accent: "#8C7D58",
-        error: "#FF5252",
-        info: "#FFFFFF",
-        success: "#4CAF50",
-        warning: "#FFC107"
-      },
-      skills: {
-        primary: "#ECEBE4", // Alabaster
-        secondary: "#A3A08F",
-        accent: "#474539",
-        error: "#FF5252",
-        info: "#5B5A4E",
-        success: "#4CAF50",
-        warning: "#FFC107"
-      },
-      portfolio: {
-        primary: "#B4C8FF", // Baby Blue Eyes
-        secondary: "#9FA8C4",
-        accent: "#62656D",
-        error: "#FF5252",
-        info: "#3F4554",
-        success: "#4CAF50",
-        warning: "#FFC107"
-      },
-      about: {
-        primary: "#4CAF50", // Blueberry
-        secondary: "#86D889",
-        accent: "#ACC4AD",
-        error: "#FF5252",
-        info: "#243324",
-        success: "#4CAF50",
-        warning: "#FFC107"
-      },
-      contact: {
-        primary: "#757780", // Maastricht Blue
-        secondary: "rgba(29, 20, 20, 0.83)",
-        accent: "#C4DFEF",
-        error: "#FF5252",
-        info: "#465660",
-        success: "#4CAF50",
-        warning: "#FFC107"
-      }
-    },
     portfolioExamples: [
       {
         title: "Portfolio v1",

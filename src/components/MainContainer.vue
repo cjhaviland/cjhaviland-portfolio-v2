@@ -1,7 +1,7 @@
 <template>
-  <main id="main-container" :style="defaultTextColor">
+  <main id="main-container">
     <h1 id="page-title" :style="titleColor">{{this.$props.title}}</h1>
-    <h2 id="page-quote" :style="quoteColor"> {{this.$props.quote}}</h2>
+    <h2 id="page-quote"> {{this.$props.quote}}</h2>
     <div id="page-content">
       <slot></slot>
     </div>
@@ -20,16 +20,6 @@ export default {
       return {
         color: `var(--${this.$route.name}-title)`
       };
-    },
-    quoteColor: function() {
-      return {
-        color: `var(--${this.$route.name}-quote)`
-      };
-    },
-    defaultTextColor: function() {
-      return {
-        color: `var(--${this.$route.name}-text)`
-      };
     }
   }
 };
@@ -38,20 +28,13 @@ export default {
 <style scoped>
 #page-content {
   display: grid;
+  justify-self: center;
   justify-items: center;
   outline-offset: 10px;
-  overflow: auto;
+  width: 80%;
 }
 
-#page-content::-webkit-scrollbar {
-  width: 0.2em;
-}
-
-#page-content::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-#page-content::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1);
+#page-quote {
+  color: var(--primary-text);
 }
 </style>

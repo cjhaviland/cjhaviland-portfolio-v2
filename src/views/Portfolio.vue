@@ -11,7 +11,7 @@
         </ExampleItem>
       </ExampleContainer>
       <!-- use the modal component, pass in the prop -->
-      <Modal :show="showModal" :example="passedExample" @close="showModal=false">
+      <Modal :show="showModal" :example="passedExample" @close="showModal = false">
       </Modal>
     </MainContainer>
 </template>
@@ -43,6 +43,7 @@ export default {
     }
   },
   methods: {
+    // Show modal and pass it the clicked on example
     loadModal: function(item) {
       this.showModal = true;
       this.passedExample = item;
