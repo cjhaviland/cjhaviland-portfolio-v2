@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 section.example-container {
-  margin-top: 3%;
+  margin: 3% 0;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, max-content);

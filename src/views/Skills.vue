@@ -78,13 +78,15 @@ $title: #5e6c9f;
 #skill-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2%;
+  grid-gap: 1em;
   width: 100%;
+  min-width: 550px;
+  margin: 3% 0;
 }
 
 .skill-track {
   display: grid;
-  grid-gap: 3%;
+  grid-gap: 1em;
   justify-items: center;
   grid-auto-rows: max-content;
   position: relative;
