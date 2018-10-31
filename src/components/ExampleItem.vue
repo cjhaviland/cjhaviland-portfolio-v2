@@ -26,7 +26,9 @@ export default {
   align-items: center;
   justify-content: center;
   height: 12vw;
+  min-height: 100px;
   width: 15vw;
+  min-width: 130px;
 }
 
 .example-item h3 {

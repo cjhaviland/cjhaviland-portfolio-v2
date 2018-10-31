@@ -6,7 +6,11 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '*',
+      redirect: 'portfolio'
+    },
+    {
+      path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
