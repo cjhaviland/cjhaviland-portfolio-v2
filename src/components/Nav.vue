@@ -21,7 +21,7 @@ export default {
         { name: 'portfolio', title: 'Portfolio', route: 'portfolio' },
         { name: 'background', title: 'Background', route: 'background' },
         { name: 'skills', title: 'Skills', route: 'skills' },
-        { name: 'about', title: 'About', route: '/' },
+        { name: 'about', title: 'About', route: 'about' },
         { name: 'contact', title: 'Contact', route: 'contact' }
       ]
     };
