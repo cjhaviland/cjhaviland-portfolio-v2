@@ -51,7 +51,7 @@ export default {
         },
         {
           link:
-            'https://drive.google.com/file/d/1NFMI2DlCGHxuYn3r7vAtaUAgkTOgjhL8/view',
+          'https://drive.google.com/file/d/1letKJ7iVNxQ_48gLl5YhKR2sYs0tFlEv/view?',
           title: 'View My Resume',
           icon: faAddressCard
         }
