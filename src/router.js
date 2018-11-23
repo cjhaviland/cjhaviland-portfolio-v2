@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import About from './views/Portfolio.vue';
 
 Vue.use(Router);
 
@@ -22,7 +23,7 @@ export default new Router({
     {
       path: '/portfolio',
       name: 'portfolio',
-      component: () => import(/* webpackChunkName: "portfolio" */ './views/Portfolio.vue')
+      component: () => import('./views/Portfolio.vue')
     },
     {
       path: '/background',
@@ -37,5 +38,5 @@ export default new Router({
       name: 'contact',
       component: () => import(/* webpackChunkName: "contact" */ './views/Contact.vue')
     }
-  ]
+  ],
 });

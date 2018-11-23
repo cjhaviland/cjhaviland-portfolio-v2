@@ -64,9 +64,12 @@ export default new Vuex.Store({
     ]
   },
   getters: {
-    getPageStyles: state => page => state.styles[page],
     getPortfolioExamples: state => state.portfolioExamples
   },
-  mutations: {},
-  actions: {}
+  mutations: {
+
+  },
+  actions: {
+
+  },
 });
