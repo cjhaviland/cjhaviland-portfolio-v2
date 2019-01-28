@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "aws s3 sync ./dist s3://cjhaviland-portfolio"
+    "deploy": "aws s3 sync ./dist s3://cjhaviland.tech"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.7",
