@@ -1,9 +1,14 @@
 import Vue from 'vue';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+
+// Reset CSS
+import 'normalize.css';
+
+// Import Main CSS
 import './assets/css/main.css';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 Vue.config.productionTip = false;
 
