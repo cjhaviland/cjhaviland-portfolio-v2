@@ -71,6 +71,7 @@ h1 {
   font-size: calc(250% + 5vw);
   line-height: 1em;
   text-align: center;
+  margin: 0.4em 0;
 }
 
 h2 {
@@ -79,7 +80,7 @@ h2 {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  margin: 5px 0px 15px 0px;
+  margin: 0;
 }
 
 h3 {
