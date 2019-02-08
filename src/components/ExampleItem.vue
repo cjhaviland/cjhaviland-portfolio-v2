@@ -25,10 +25,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 12vw;
   min-height: 100px;
-  width: 15vw;
-  min-width: 130px;
+  max-height: 200px;
+  width: 100%;
+  min-width: 150px;
 }
 
 .example-item h3 {

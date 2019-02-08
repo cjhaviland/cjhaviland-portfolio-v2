@@ -21,9 +21,8 @@ section.example-container {
   margin: 3% 0;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, max-content);
-  grid-template-rows: repeat(2, max-content);
-  grid-gap: 1em;
-  justify-content: space-evenly;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 400px));
+  grid-gap: 30px;
+  justify-content: space-around;
 }
 </style>
